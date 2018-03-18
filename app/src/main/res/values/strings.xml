@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">KindergartenReadiness</string>
+    <string name="quiz_name">Kindergarten Readiness Quiz</string>
+    <string name="home">Home</string>
+    <string name="about">About the app</string>
+    <string name="about_us_details">
+            Kindergarten Readiness app helps parent to find out whether
+            their child is ready for KINDERGARTEN.
+    </string>
+
+    <string name="about_us_details_1">Your child is old enough to start kindergarten — but is he or she ready?
+            \nKindergarten Readiness app helps parent to find out whether
+            their little ones are ready to start formal education - KINDERGARTEN.
+           \nIt also helps the parents by providing additional information, knowledge, resources required to make their child ready for Kindergarten.
+    </string>
+
+
+    <string name="how_to_use">How to use</string>
+    <string name="how_to_use_detail">Parents can assess their child by answering few questions.
+        Once the answers are submitted this app will evaluate your child and provide feedback. </string>
+
+    <string name="how_to_use_detail_1">Parents can select a topic to assess their child by answering few questions.
+        Once the answers are submitted this app will evaluate your child and provide feedback. </string>
+
+    <string name="learn_more">Learn More</string>
+    <string name="learn_more_additional_inforamtion">
+        https://www.babycenter.com/0_kindergarten-readiness-is-your-child-ready-for-school_67232.bce</string>
+
+    <string name="start_quiz">How much do you know about your child skills ?</string>
+    <string name="start_quiz_button">START EVALUATION</string>
+    <string name="start_quiz_again">START EVALUATION AGAIN</string>
+
+    <string name="heading">Is your child ready for KINDERGARTEN ?</string>
+
+
+    <string name="submit">Submit</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="heading_1_main">Select a topic to start quiz</string>
+
+
+    <string name="question1">Can eat on his/her own ?</string>
+    <string name="option1">A. Not Yet</string>
+    <string name="option2">B. Some of the time</string>
+    <string name="option3">C. Most of the time</string>
+
+    <string name="option4">D. Rarely misses this one</string>
+
+    <string name="quit">QUIT</string>
+    <string name="reset">RESET</string>
+    <string name="result">Wonderful, your child is ready for Kindergarten !!!</string>
+    <string name="searchKindergarten">Search Kindergarten</string>
+<string name="evaluation">EVALUATION</string>
+    <string name="evaluation_Details">Kindergarten Readiness Skills Checklist</string>
+
+    <string name="criteria1">Language skills</string>
+    <string name="criteria2">Motor skills</string>
+    <string name="criteria3">Reading skills</string>
+    <string name="criteria4">Maths skills</string>
+    <string name="criteria5">Social skills</string>
+    <string name="fail_reason">Your toddler need MORE TIME to start Kindergarten. We can help to develop the required skills. </string>
+    <string name="login">Login to Start</string>
+
+
+</resources>

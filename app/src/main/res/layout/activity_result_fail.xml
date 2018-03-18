@@ -1,0 +1,119 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fcdbbd"
+    tools:context="com.example.android.kindergarten.readiness.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fcdbbd"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/kindergarden_main_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/fail_reason"
+            android:textSize="25sp"
+            android:textStyle="bold"
+
+            />
+
+
+        <CheckBox
+            android:id="@+id/choice1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:buttonTint="#45ba02"
+            android:checked="true"
+            android:text="@string/criteria1"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/choice2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:buttonTint="#45ba02"
+            android:checked="true"
+            android:text="@string/criteria2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            />
+
+        <CheckBox
+            android:id="@+id/choice3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:buttonTint="#45ba02"
+            android:checked="true"
+            android:text="@string/criteria3"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+        <CheckBox
+            android:id="@+id/choice4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:buttonTint="#45ba02"
+            android:checked="true"
+            android:text="@string/criteria4"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+        <CheckBox
+            android:id="@+id/choice5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:buttonTint="#45ba02"
+            android:checked="true"
+            android:text="@string/criteria5"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#45ba02"
+            android:onClick="startEvaluation"
+            android:text="@string/login"
+            android:textSize="15sp" />
+
+
+        <Button
+            android:id="@+id/start_quiz_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#45ba02"
+            android:onClick="startEvaluation"
+            android:text="@string/start_quiz_again"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+</ScrollView>
