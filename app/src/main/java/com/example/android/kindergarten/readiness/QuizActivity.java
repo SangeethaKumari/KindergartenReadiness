@@ -16,7 +16,11 @@ import android.widget.Toast;
 
 public class QuizActivity extends AppCompatActivity {
 
-
+    public static final int TOTAL_NUMBER_QUESTIONS = 10;
+    public static final String SCORE_VALUE = null;
+    public static final String QUESTION_NUMBER_VALUE = null;
+    private static final String TAG = "QuizActivity";
+    private static boolean UPDATE_QUESTION_FIRST_TIME = true;
     private QuestionBank questionBank = new QuestionBank();
     private TextView questionView;
     private String mAnswer;
@@ -24,12 +28,6 @@ public class QuizActivity extends AppCompatActivity {
     private int question = 0;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
-    public static final int TOTAL_NUMBER_QUESTIONS = 10;
-    public static final String SCORE_VALUE = null;
-    public static final String QUESTION_NUMBER_VALUE = null;
-    private static final String TAG = "QuizActivity";
-    private static  boolean UPDATE_QUESTION_FIRST_TIME = true;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +35,6 @@ public class QuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
         questionView = (TextView) findViewById(R.id.question);
         updateQuestion();
-
-
     }
 
     /**
@@ -53,12 +49,9 @@ public class QuizActivity extends AppCompatActivity {
         radioButton = (RadioButton) findViewById(selectedId);
         if (radioButton == null) {
             Toast.makeText(QuizActivity.this, "Please select an answer to continue", Toast.LENGTH_SHORT).show();
-
-
         } else {
             // Is the button now checked?
             boolean checked = radioButton.isChecked();
-
             // Check which radio button was clicked
             switch (selectedId) {
                 case R.id.choice1:
@@ -87,7 +80,6 @@ public class QuizActivity extends AppCompatActivity {
                 // update with new questions
                 question++;
                 updateQuestion();
-
             } else {
                 if (score < 30) {
                     //call the result fail page
@@ -102,7 +94,13 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * This method takes the user to the home screen.
+     * The method is called onClick of HOME buttton from
+     * activity screen.
+     *
+     * @param view
+     */
     public void homeScreen(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -112,7 +110,6 @@ public class QuizActivity extends AppCompatActivity {
      * This method updates the question and answers in the
      * quiz activity view.
      */
-
     private void updateQuestion() {
         questionView.setText(questionBank.getQuestion(question));
         mAnswer = questionBank.getCorrectAnswer(question);
@@ -131,6 +128,9 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     @Override
+    /**
+     * This method saves the value of the score when the orientation is changed.
+     */
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         score = savedInstanceState.getInt(SCORE_VALUE);
