@@ -40,8 +40,8 @@ public class QuestionBank {
 
 
 
-    private String mCorrectAnswers[] = {"2", "3", "3",
-            "1","4", "3", "3",  "4","2",  "2","2"};
+    private String mCorrectAnswers[] = {"1", "3", "3",
+            "1","1", "3", "3",  "1","2",  "2","2"};
 
 
 
