@@ -1,8 +1,10 @@
 package com.example.android.kindergarten.readiness;
 
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -25,19 +27,27 @@ public class QuizActivity extends AppCompatActivity {
     private int question = 0;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
-    public static final int TOTAL_NUMBER_QUESTIONS = 11;
+    public static final int TOTAL_NUMBER_QUESTIONS = 10;
+    public static final String SCORE_VALUE = null;
+    public static final String QUESTION_NUMBER_VALUE = null;
+    private static final String TAG = "QuizActivity";
+    private static  boolean UPDATE_QUESTION_FIRST_TIME = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         questionView = (TextView) findViewById(R.id.question);
+        updateQuestion();
+
 
     }
 
     /**
      * This method is called on click on next button.
      * This method gets the value of answer selected.
+     *
      * @param view
      */
     public void nextQuestion(View view) {
@@ -78,7 +88,9 @@ public class QuizActivity extends AppCompatActivity {
             if (question < TOTAL_NUMBER_QUESTIONS) { // checks whether there are still more questions to show
                 radioGroup.clearCheck();
                 // update with new questions
+                question++;
                 updateQuestion();
+
             } else {
                 if (score < 30) {
                     //call the result fail page
@@ -94,7 +106,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
 
-    public void homeScreen(View view){
+    public void homeScreen(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
@@ -107,6 +119,25 @@ public class QuizActivity extends AppCompatActivity {
     private void updateQuestion() {
         questionView.setText(questionBank.getQuestion(question));
         mAnswer = questionBank.getCorrectAnswer(question);
-        question++;
+    }
+
+    @Override
+    /**
+     * This method saves the value of the score when the orientation is changed.
+     *
+     */
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt(SCORE_VALUE, score);
+        savedInstanceState.putInt(QUESTION_NUMBER_VALUE, question);
+
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        score = savedInstanceState.getInt(SCORE_VALUE);
+        question = savedInstanceState.getInt(QUESTION_NUMBER_VALUE);
+        questionView.setText(questionBank.getQuestion(question));
     }
 }
