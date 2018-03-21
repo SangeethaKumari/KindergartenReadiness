@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -19,8 +20,6 @@ public class QuizActivity extends AppCompatActivity {
     public static final int TOTAL_NUMBER_QUESTIONS = 10;
     public static final String SCORE_VALUE = null;
     public static final String QUESTION_NUMBER_VALUE = null;
-    private static final String TAG = "QuizActivity";
-    private static boolean UPDATE_QUESTION_FIRST_TIME = true;
     private QuestionBank questionBank = new QuestionBank();
     private TextView questionView;
     private String mAnswer;
@@ -28,12 +27,13 @@ public class QuizActivity extends AppCompatActivity {
     private int question = 0;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
-
+    private Button nextButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         questionView = (TextView) findViewById(R.id.question);
+        nextButton = (Button)findViewById(R.id.next);
         updateQuestion();
     }
 
@@ -81,6 +81,7 @@ public class QuizActivity extends AppCompatActivity {
                 question++;
                 updateQuestion();
             } else {
+                Toast.makeText(QuizActivity.this, "You have scored: "+ score, Toast.LENGTH_SHORT).show();
                 if (score < 30) {
                     //call the result fail page
                     Intent intent = new Intent(this, ResultFailActivity.class);
@@ -113,6 +114,11 @@ public class QuizActivity extends AppCompatActivity {
     private void updateQuestion() {
         questionView.setText(questionBank.getQuestion(question));
         mAnswer = questionBank.getCorrectAnswer(question);
+
+        if(question == 9)
+        {
+         nextButton.setText("SUBMIT");
+        }
     }
 
     @Override
